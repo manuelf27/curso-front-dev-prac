@@ -131,7 +131,6 @@ nav {
 .mobile-menu {
   position: absolute;
   top: 60px;
-  left: 60px;
   padding: 24px;
 }
 .mobile-menu a {
@@ -170,4 +169,14 @@ nav {
   .navbar-email {
     display: none;
   }
+  .desktop-menu {
+    display: none;
+  }
+
 }
+
+@media (min-width: 641px) {
+  .mobile-menu {
+      display: none;
+    }
+  }
