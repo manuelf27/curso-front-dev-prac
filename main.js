@@ -14,18 +14,38 @@ menuHamIcon.addEventListener('click', toggleMobileMenu);
 menuCarritoIcon.addEventListener('click', toggleCarritoIcon);
 
 function toggleDesktopMenu() {     /*Declaración de función toggleDesktopMenu la cual activa hace que la clase inactive desaparezca y aparezca*/
+  
+  const isAsideClosed = aside.classList.contains('inactive');
+  
   desktopMenu.classList.toggle('inactive');
+
+  if(isAsideClosed) {
+    desktopMenu.classList.add(!'inactive');
+  }
+
+  else {
+    aside.classList.add('inactive');
+  }
+
 }
 
 function toggleMobileMenu() {
+  const isAsideClosed = aside.classList.contains('inactive');
+  
   mobileMenu.classList.toggle('inactive');
+
+if (isAsideClosed) {
+     mobileMenu.classList.add(!'inactive');  /*abrir mobileMenu*/
+     } else {
+     aside.classList.add('inactive'); /*Cerrar aside y abrir mobileMenu*/
+  }
+
 }
 
 function toggleCarritoIcon() {
 
   const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
-  const isAsideClosed = aside.classList.contains('inactive');
-
+  
   aside.classList.toggle('inactive');
 
   if (isMobileMenuClosed) {
@@ -33,11 +53,5 @@ function toggleCarritoIcon() {
     } else {
     mobileMenu.classList.add('inactive'); /*Cerrar MobileMenu y abrir aside*/
   }
-
-  if (isAsideClosed) {
-     mobileMenu.classList.add(!'inactive');  /*abrir mobileMenu*/
-     } else {
-     aside.classList.add('inactive'); /*Cerrar aside y abrir mobileMenu*/
-  }
-  
+    
 }
