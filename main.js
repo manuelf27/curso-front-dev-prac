@@ -16,18 +16,20 @@ menuCarritoIcon.addEventListener('click', toggleCarritoIcon);
 function toggleDesktopMenu() {     /*Declaración de función toggleDesktopMenu la cual activa hace que la clase inactive desaparezca y aparezca*/
   
   const isAsideClosed = aside.classList.contains('inactive');
-  
+    
   desktopMenu.classList.toggle('inactive');
 
-  if(isAsideClosed) {
-    desktopMenu.classList.add(!'inactive');
+  if(isAsideClosed) { /*Si menu del carrito esta cerrado*/
+    desktopMenu.classList.add(!'inactive'); /*Abrir menu del correo*/
+  }  
+
+    else {
+    aside.classList.add('inactive'); /*Sino Cerrar menu del carrito*/
+    }
+
+
   }
 
-  else {
-    aside.classList.add('inactive');
-  }
-
-}
 
 function toggleMobileMenu() {
   const isAsideClosed = aside.classList.contains('inactive');
@@ -45,13 +47,22 @@ if (isAsideClosed) {
 function toggleCarritoIcon() {
 
   const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
+  const isDesktopMenuClosed = desktopMenu.classList.contains('inactive');
   
   aside.classList.toggle('inactive');
 
   if (isMobileMenuClosed) {
-    aside.classList.add(!'inactive');  /*abrir aside*/
+    aside.classList.add(!'inactive');  /*abrir menú del carrito*/
     } else {
-    mobileMenu.classList.add('inactive'); /*Cerrar MobileMenu y abrir aside*/
+    mobileMenu.classList.add('inactive'); /*Sino Cerrar MobileMenu*/
   }
-    
+  
+  if(isDesktopMenuClosed) { /*Si menu del correo esta cerrado*/
+    aside.classList.add(!'inactive'); /*Abrir menu del carrito*/
+  }  
+
+    else {
+    desktopMenu.classList.add('inactive'); /*Sino cerrar menu del correo*/
+    }  
+
 }
