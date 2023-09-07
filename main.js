@@ -30,7 +30,6 @@ function toggleDesktopMenu() {     /*Declaración de función toggleDesktopMenu 
 
   }
 
-
 function toggleMobileMenu() {
   const isAsideClosed = aside.classList.contains('inactive');
   
@@ -64,5 +63,35 @@ function toggleCarritoIcon() {
     else {
     desktopMenu.classList.add('inactive'); /*Sino cerrar menu del correo*/
     }  
+
+}
+
+const productList = [];
+productList.push({
+  name: 'TV',
+  price: 120,
+  image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+});
+const productList = [];
+productList.push({
+  name: 'Radio',
+  price: 90,
+  image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+});
+const productList = [];
+productList.push({
+  name: 'Bike',
+  price: 160,
+  image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+});
+const productList = [];
+productList.push({
+  name: 'Celular',
+  price: 150,
+  image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+});
+
+for(product of productList){
+  const productCard = document.createElement('div');
 
 }
